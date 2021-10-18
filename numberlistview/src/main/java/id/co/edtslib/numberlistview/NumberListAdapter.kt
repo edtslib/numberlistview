@@ -6,10 +6,12 @@ import id.co.edtslib.baserecyclerview.BaseRecyclerViewAdapter
 import id.co.edtslib.numberlistview.databinding.AdapterNumberingListBinding
 
 class NumberListAdapter: BaseRecyclerViewAdapter<AdapterNumberingListBinding, String>() {
+    var numberListTextPadding = 0f
+
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> AdapterNumberingListBinding
         get() = AdapterNumberingListBinding::inflate
 
     override fun clickable() = false
-    override fun createHolder() = NumberListHolder(binding)
+    override fun createHolder() = NumberListHolder(binding, numberListTextPadding)
 
 }
