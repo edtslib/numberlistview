@@ -25,12 +25,12 @@ To show bottom view, just add NumberListView on your layout
 
 ```xml
     /*
-    <id.co.edtslib.numberlistview.NumberListView
-        android:id="@+id/numberListView"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content" />
+<id.co.edtslib.numberlistview.NumberListView
+    android:id="@+id/numberListView"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content" />
     */
 ```
 For add list you can using add method. For example
@@ -44,3 +44,10 @@ For add list you can using add method. For example
     */
 ```
 
+### Attributes information
+
+##### _app:symbol_
+[string]: list numbering symbol
+
+##### _app:space_
+[dimension]: line spacing
