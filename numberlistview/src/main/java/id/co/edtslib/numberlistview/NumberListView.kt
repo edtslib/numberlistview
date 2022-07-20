@@ -28,10 +28,6 @@ class NumberListView: FrameLayout {
     private fun init(attrs: AttributeSet?) {
         val view = inflate(context, R.layout.view_numbering_list, this)
 
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = adapter
-
         if (attrs != null) {
             val a = context.theme.obtainStyledAttributes(
                 attrs,
@@ -44,8 +40,14 @@ class NumberListView: FrameLayout {
                 adapter.symbol = symbol
             }
 
+            adapter.space = a.getDimension(R.styleable.NumberListView_space, 0f)
+
             a.recycle()
         }
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = adapter
     }
 
     fun add(text: String) {
